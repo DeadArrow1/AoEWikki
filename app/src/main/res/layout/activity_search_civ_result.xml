@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context=".SearchCivResultActivity">
+
+    <TextView
+        android:id="@+id/TextViewCivTeamBonus"
+        android:layout_width="238dp"
+        android:layout_height="75dp"
+        android:layout_marginStart="16dp"
+        android:text="Team bonus:"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TextViewCivUniqueTech"
+        android:textColor="@color/black"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/TextViewCivCivilizationBonus"
+        android:layout_width="238dp"
+        android:layout_height="116dp"
+        android:layout_marginStart="16dp"
+        android:text="Civilization bonus:"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TextViewCivTeamBonus"
+        android:textColor="@color/black"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/TextViewCivUniqueTech"
+        android:layout_width="238dp"
+        android:layout_height="23dp"
+        android:layout_marginStart="16dp"
+        android:text="Unique tech:"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TextViewCivUniqueUnit"
+        android:textColor="@color/black"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/TextViewCivUniqueUnit"
+        android:layout_width="238dp"
+        android:layout_height="21dp"
+        android:layout_marginStart="16dp"
+        android:text="Special units:"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TextViewCivArmyType"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/TextViewCivArmyType"
+        android:layout_width="238dp"
+        android:layout_height="19dp"
+        android:layout_marginStart="16dp"
+        android:text="Army type:"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TextViewCivExpansion"
+        android:textColor="@color/black"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/TextViewCivExpansion"
+        android:layout_width="238dp"
+        android:layout_height="19dp"
+        android:layout_marginStart="16dp"
+        android:capitalize="none"
+        android:text="Expansion:"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TextViewCivName"
+        app:layout_constraintVertical_bias="0.03" />
+
+    <TextView
+        android:id="@+id/TextViewCivName"
+        android:layout_width="176dp"
+        android:layout_height="61dp"
+        android:layout_marginTop="32dp"
+        android:fontFamily="sans-serif"
+        android:gravity="center"
+        android:scaleX="4"
+        android:scaleY="3"
+        android:shadowColor="@color/black"
+        android:text="Name"
+        android:textColor="@color/black"
+        android:textStyle="bold|italic"
+        android:typeface="normal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context=".SearchCivilizationActivity">
+
+
+    <Button
+        android:id="@+id/SearchCivByID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="getResponseByID"
+        android:text="Search by ID"
+        app:layout_constraintBottom_toTopOf="@+id/SearchCivByName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewCiv"
+        app:layout_constraintVertical_bias="0.578" />
+
+    <EditText
+        android:id="@+id/CivID"
+        android:layout_width="130dp"
+        android:layout_height="48dp"
+        android:ems="10"
+        android:gravity="center_horizontal"
+        android:hint="write id here"
+        android:inputType="number"
+        app:layout_constraintBottom_toTopOf="@+id/SearchCivByName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/SearchCivByID" />
+
+    <Button
+        android:id="@+id/SearchCivByName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="getResponseByName"
+        android:text="Search by name"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewCiv"
+        app:layout_constraintVertical_bias="0.54" />
+
+    <TextView
+        android:id="@+id/textViewCiv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="72dp"
+        android:scaleX="2"
+        android:scaleY="2"
+        android:text="Search civilization"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/CivName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:gravity="center_horizontal"
+        android:hint="write name here"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/SearchCivByName"
+        app:layout_constraintVertical_bias="0.172" />
+
+    <TextView
+        android:id="@+id/ErrorWindow"
+        android:layout_width="133dp"
+        android:layout_height="62dp"
+        android:textAlignment="center"
+        android:textColor="@color/design_default_color_error"
+        app:layout_constraintBottom_toTopOf="@+id/SearchCivByID"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewCiv" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
