@@ -8,20 +8,21 @@
     tools:context=".SearchTechnologyResultActivity">
 
 
-
     <TextView
+        android:textSize="16sp"
         android:id="@+id/TextViewTechApply"
-        android:layout_width="194dp"
+        android:layout_width="360dp"
         android:layout_height="160dp"
-        android:textColor="@color/black"
+        android:textColor="@color/purple_500"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.119"
+        app:layout_constraintHorizontal_bias="0.509"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/TextViewTechBuildTime"
         app:layout_constraintVertical_bias="0.0" />
 
     <Button
+        android:textSize="20sp"
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -35,6 +36,7 @@
         app:layout_constraintVertical_bias="0.972" />
 
     <Button
+        android:textSize="16sp"
         android:id="@+id/GoBackButton"
         android:layout_width="87dp"
         android:layout_height="51dp"
@@ -49,62 +51,68 @@
         app:layout_constraintVertical_bias="0.976" />
 
     <TextView
+        android:textSize="16sp"
         android:id="@+id/TextViewTechBuildTime"
-        android:layout_width="180dp"
+        android:layout_width="360dp"
         android:layout_height="20dp"
-        android:textColor="@color/black"
+        android:textColor="@color/purple_500"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.112"
+        app:layout_constraintHorizontal_bias="0.509"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/TextViewTechCost" />
 
     <TextView
+        android:textSize="16sp"
         android:id="@+id/TextViewTechAge"
-        android:layout_width="180dp"
+        android:layout_width="360dp"
         android:layout_height="20dp"
-        android:textColor="@color/black"
+        android:textColor="@color/purple_500"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.112"
+        app:layout_constraintHorizontal_bias="0.509"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/TextViewTechExpansion" />
 
     <TextView
+        android:textSize="16sp"
         android:id="@+id/TextViewTechCost"
-        android:layout_width="180dp"
+        android:layout_width="360dp"
         android:layout_height="20dp"
-        android:textColor="@color/black"
+        android:textColor="@color/purple_500"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.112"
+        app:layout_constraintHorizontal_bias="0.49"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/TextViewTechBuilding" />
 
     <TextView
+        android:textSize="16sp"
         android:id="@+id/TextViewTechBuilding"
-        android:layout_width="180dp"
+        android:layout_width="360dp"
         android:layout_height="20dp"
-        android:textColor="@color/black"
+        android:textColor="@color/purple_500"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.112"
+        app:layout_constraintHorizontal_bias="0.509"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/TextViewTechAge" />
 
     <TextView
+        android:textSize="16sp"
         android:id="@+id/TextViewTechExpansion"
-        android:layout_width="180dp"
+        android:layout_width="360dp"
         android:layout_height="20dp"
-        android:textColor="@color/black"
+        android:textColor="@color/purple_500"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.112"
+        app:layout_constraintHorizontal_bias="0.49"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/TextViewTechDescription" />
 
     <TextView
+        android:textSize="16sp"
         android:id="@+id/TextViewTechDescription"
         android:layout_width="360dp"
         android:layout_height="60dp"
         android:capitalize="none"
         android:gravity="center"
-        android:textColor="@color/black"
+        android:textColor="@color/purple_500"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.509"
@@ -113,6 +121,7 @@
         app:layout_constraintVertical_bias="0.025" />
 
     <TextView
+        android:textSize="16sp"
         android:id="@+id/TextViewTechName"
         android:layout_width="360dp"
         android:layout_height="61dp"
@@ -123,7 +132,7 @@
         android:scaleY="3"
         android:shadowColor="@color/black"
         android:text="Name"
-        android:textColor="@color/black"
+        android:textColor="@color/purple_500"
         android:textStyle="bold|italic"
         android:typeface="normal"
         app:layout_constraintEnd_toEndOf="parent"

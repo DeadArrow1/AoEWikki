@@ -9,6 +9,7 @@
 
 
     <Button
+        android:textSize="20sp"
         android:id="@+id/SearchCivByID"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -16,12 +17,14 @@
         android:text="Search by ID"
         app:layout_constraintBottom_toTopOf="@+id/SearchCivByName"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintHorizontal_bias="0.500"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewCiv"
-        app:layout_constraintVertical_bias="0.578" />
+        app:layout_constraintVertical_bias="0.150
+" />
 
     <Button
+        android:textSize="20sp"
         android:id="@+id/GoBackButton"
         android:layout_width="87dp"
         android:layout_height="51dp"
@@ -35,6 +38,7 @@
         app:layout_constraintVertical_bias="0.976" />
 
     <EditText
+        android:textSize="20sp"
         android:id="@+id/CivID"
         android:layout_width="130dp"
         android:layout_height="48dp"
@@ -42,12 +46,18 @@
         android:gravity="center_horizontal"
         android:hint="write id here"
         android:inputType="number"
+        android:textColor="@color/design_default_color_primary_dark"
+        android:textColorHint="@color/design_default_color_primary_dark"
         app:layout_constraintBottom_toTopOf="@+id/SearchCivByName"
         app:layout_constraintEnd_toEndOf="parent"
+
+        app:layout_constraintHorizontal_bias="0.500"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/SearchCivByID" />
+        app:layout_constraintTop_toBottomOf="@+id/SearchCivByID"
+        app:layout_constraintVertical_bias="0.200" />
 
     <Button
+        android:textSize="20sp"
         android:id="@+id/SearchCivByName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -55,12 +65,14 @@
         android:text="Search by name"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
+
+        app:layout_constraintHorizontal_bias="0.500"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewCiv"
-        app:layout_constraintVertical_bias="0.54" />
+        app:layout_constraintVertical_bias="0.4" />
 
     <TextView
+        android:textSize="20sp"
         android:id="@+id/textViewCiv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -73,6 +85,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
+        android:textSize="20sp"
         android:id="@+id/CivName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -81,21 +94,25 @@
         android:hint="write name here"
         android:inputType="textPersonName"
         android:minHeight="48dp"
+        android:textColor="@color/design_default_color_primary_dark"
+        android:textColorHint="@color/design_default_color_primary_dark"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/SearchCivByName"
-        app:layout_constraintVertical_bias="0.172" />
+        app:layout_constraintVertical_bias="0.1" />
 
     <TextView
         android:id="@+id/ErrorWindow"
         android:layout_width="133dp"
-        android:layout_height="62dp"
+        android:layout_height="80dp"
         android:textAlignment="center"
         android:textColor="@color/design_default_color_error"
-        app:layout_constraintBottom_toTopOf="@+id/SearchCivByID"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/SearchCivByName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewCiv" />
+        app:layout_constraintTop_toBottomOf="@+id/CivID" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

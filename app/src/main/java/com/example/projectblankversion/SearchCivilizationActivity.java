@@ -76,10 +76,11 @@ public class SearchCivilizationActivity extends AppCompatActivity {
                 String[] BasicInformationArray = toStringArray(BasicInformationJSONArray);
                 for(int i=0; i<=BasicInformationArray.length;i++)
                 {
-                    JSONObject Civ =new JSONObject( BasicInformationArray[i]);
+
                     if(i+1==inputInt){
+                        JSONObject Civ =new JSONObject( BasicInformationArray[i]);
                         openSearchResultActivity(Civ.toString());
-                        break;
+                        return;
                     }
                 }
             } catch (JSONException e) {

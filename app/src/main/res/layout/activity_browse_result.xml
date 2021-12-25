@@ -7,19 +7,19 @@
     android:background="@drawable/background"
     tools:context=".BrowseResultActivity">
 
+
     <TextView
         android:id="@+id/BrowseNamesTextView"
         android:layout_width="250dp"
-        android:layout_height="514dp"
+        android:layout_height="550dp"
         android:layout_marginStart="32dp"
         android:text="TextView"
-        android:textColor="@color/black"
+        android:textColor="@color/purple_500"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.497" />
-
+        app:layout_constraintVertical_bias="0.596" />
 
     <Button
         android:id="@+id/GoBackButton"
@@ -37,20 +37,22 @@
     <TextView
         android:id="@+id/BrowseIDsTextView"
         android:layout_width="100dp"
-        android:layout_height="514dp"
+        android:layout_height="550dp"
         android:layout_marginEnd="16dp"
         android:text="TextView"
-        android:textColor="@color/black"
+
+        android:textColor="@color/purple_500"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.497" />
+        app:layout_constraintVertical_bias="0.596" />
 
     <Button
+        android:textSize="18sp"
         android:id="@+id/PreviousPage"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="150dp"
+        android:layout_height="60dp"
         android:layout_marginStart="32dp"
         android:onClick="PreviousPage"
         android:text="Previous page"
@@ -60,9 +62,10 @@
         app:layout_constraintVertical_bias="0.516" />
 
     <Button
+        android:textSize="18sp"
         android:id="@+id/NextPage"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="150dp"
+        android:layout_height="60dp"
         android:layout_marginEnd="16dp"
         android:onClick="NextPage"
         android:text="Next page"
@@ -72,6 +75,7 @@
         app:layout_constraintVertical_bias="0.516" />
 
     <Button
+        android:textSize="20sp"
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

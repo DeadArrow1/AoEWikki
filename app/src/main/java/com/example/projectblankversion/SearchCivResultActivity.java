@@ -22,7 +22,7 @@ public class SearchCivResultActivity extends AppCompatActivity {
     String name;
     String expansion;
     String armyType;
-
+    String uniqueUnits;
     String uniqueTech;
     String teamBonus;
     String civilizationBonus;
@@ -50,145 +50,95 @@ public class SearchCivResultActivity extends AppCompatActivity {
         try {
 
             JSONObject civInformationJSON = new JSONObject(value);
-
-            //rozkrajeni JSON objektu na nam vyhovujici stringi pomoci struktury
             name = civInformationJSON.getString("name");
             expansion = civInformationJSON.getString("expansion");
             armyType = civInformationJSON.getString("army_type");
 
-
-
-
+            //rozkrajeni JSON objektu na nam vyhovujici stringi pomoci struktury
             JSONArray soldiersJSONArray = civInformationJSON.getJSONArray("unique_unit");
             JSONArray technologiesJSONArray = civInformationJSON.getJSONArray("unique_tech");
             JSONArray civilizationBonusJSONArray = civInformationJSON.getJSONArray("civilization_bonus");
 
             String[] soldiersArray = toStringArray(soldiersJSONArray);
-
-            for (i = 0; i < soldiersArray.length; i++) {
-
-                String uniqueUnitURL = soldiersArray[i];
-
-                RequestQueue unitQueue = Volley.newRequestQueue(this);
-                String url = uniqueUnitURL;
-
-                StringRequest stringRequest = new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
-                    @Override
-                    public void onResponse(String response) {
-                        unitQueue.stop();
-                        try {
-                            JSONObject unit = new JSONObject(response);
-                            if(unitsConnectingString.equals("")) {
-                                unitsConnectingString = unitsConnectingString.concat(" " + unit.getString("name"));
-                            }
-                            else
-                                {
-                                    unitsConnectingString = unitsConnectingString.concat(", " + unit.getString("name"));
-                                }
-                            TextViewCivUniqueUnit = (TextView) findViewById(R.id.TextViewCivUniqueUnit);
-                            TextViewCivUniqueUnit.setText("Special units: " + unitsConnectingString);
+            if(soldiersArray.length!=0) {
+                for (i = 0; i < soldiersArray.length; i++) {
 
 
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }
+                    uniqueUnits = soldiersArray[i];//potreba dalsi pozadavek na API
 
-
+                    String[] SplitUrl = uniqueUnits.split("/");
+                    uniqueUnits = SplitUrl[SplitUrl.length - 1];
+                    uniqueUnits = uniqueUnits.replace("_", " ");
+                    uniqueUnits = uniqueUnits.substring(0, 1).toUpperCase() + uniqueUnits.substring(1);
+                    if (unitsConnectingString.isEmpty()) {
+                        unitsConnectingString = "Special units: " + uniqueUnits;
+                    } else {
+                        unitsConnectingString = unitsConnectingString.concat(", " + uniqueUnits);
                     }
-                },
-                        new Response.ErrorListener() {
-                            @Override
-                            public void onErrorResponse(VolleyError error) {
-                                String errorvar = error.toString();
-                                if (errorvar.equals("com.android.volley.ClientError")) {
 
-                                } else {
-
-                                }
-                            }
-                        });
-                unitQueue.add(stringRequest);
+                }
             }
+
+            TextViewCivUniqueUnit = (TextView) findViewById(R.id.TextViewCivUniqueUnit);
+            TextViewCivUniqueUnit.setText(unitsConnectingString);
+
 
             String[] technologiesArray = toStringArray(technologiesJSONArray);
-            for (i = 0; i < technologiesArray.length; i++) {
+            if(technologiesArray.length!=0){
+            for (i = 0; i < technologiesArray.length; i++){
+                uniqueTech = technologiesArray[i];//potreba dalsi pozadavek na API
 
-                String uniqueTechURL = technologiesArray[i];
-
-                RequestQueue techQueue = Volley.newRequestQueue(this);
-                String url = uniqueTechURL;
-
-                StringRequest stringRequest = new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
-                    @Override
-                    public void onResponse(String response) {
-                        techQueue.stop();
-                        try {
-                            JSONObject tech = new JSONObject(response);
-                            if(techConnectingString.equals("")) {
-                                techConnectingString = techConnectingString.concat(" " + tech.getString("name"));
-                            }
-                            else
-                            {
-                                techConnectingString = techConnectingString.concat(", " + tech.getString("name"));
-                            }
-                            TextViewCivUniqueTech = (TextView) findViewById(R.id.TextViewCivUniqueTech);
-                            TextViewCivUniqueTech.setText(TextViewCivUniqueTech.getText() + techConnectingString);
-
-
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }
-
-
-                    }
-                },
-                        new Response.ErrorListener() {
-                            @Override
-                            public void onErrorResponse(VolleyError error) {
-                                String errorvar = error.toString();
-                                if (errorvar.equals("com.android.volley.ClientError")) {
-                                } else {
-                                }
-                            }
-                        });
-                techQueue.add(stringRequest);
+            String[] SplitUrl = uniqueTech.split("/");
+            uniqueTech = SplitUrl[SplitUrl.length - 1];
+            uniqueTech = uniqueTech.replace("_", " ");
+            uniqueTech = uniqueTech.substring(0, 1).toUpperCase() + uniqueTech.substring(1);
+            if(techConnectingString.isEmpty())
+            {
+                techConnectingString="Special tech: "+uniqueTech;
             }
+            else{
+                techConnectingString=techConnectingString.concat(", "+uniqueTech);
+            }
+            }
+            }
+
+            TextViewCivUniqueTech = (TextView) findViewById(R.id.TextViewCivUniqueTech);
+            TextViewCivUniqueTech.setText(techConnectingString);
 
             String[] civilizationBonusArray = toStringArray(civilizationBonusJSONArray);
-            for (i = 0; i < civilizationBonusArray.length; i++) {
-                if(civBonusesConnectingString.equals(""))
-                {
-                    civBonusesConnectingString = civBonusesConnectingString.concat(" " + civilizationBonusArray[i]);
-                }
-                else
-                    {
-                    civBonusesConnectingString = civBonusesConnectingString.concat("\n" + civilizationBonusArray[i]);
+            if(civilizationBonusArray.length!=0) {
+                for (i = 0; i < civilizationBonusArray.length; i++) {
+                    if (civBonusesConnectingString.equals("")) {
+                        civBonusesConnectingString = civBonusesConnectingString.concat(" " + civilizationBonusArray[i]);
+                    } else {
+                        civBonusesConnectingString = civBonusesConnectingString.concat("\n" + civilizationBonusArray[i]);
                     }
 
+                }
+                TextViewCivCivilizationBonus = (TextView) findViewById(R.id.TextViewCivCivilizationBonus);
+                TextViewCivCivilizationBonus.setText(TextViewCivCivilizationBonus.getText() + civBonusesConnectingString);
             }
-            TextViewCivCivilizationBonus = (TextView) findViewById(R.id.TextViewCivCivilizationBonus);
-            TextViewCivCivilizationBonus.setText(TextViewCivCivilizationBonus.getText() + civBonusesConnectingString);
-
-            uniqueTech = civInformationJSON.getString("unique_tech");
+            /*uniqueTech = civInformationJSON.getString("unique_tech");*/
             teamBonus = civInformationJSON.getString("team_bonus");
-            civilizationBonus = civInformationJSON.getString("civilization_bonus");
+            /*civilizationBonus = civInformationJSON.getString("civilization_bonus");*/
 
             TextViewCivName = (TextView) findViewById(R.id.TextViewCivName);
             TextViewCivName.setText(name);
 
             TextViewCivExpansion = (TextView) findViewById(R.id.TextViewCivExpansion);
-            TextViewCivExpansion.setText(TextViewCivExpansion.getText()+" " + expansion);
+            TextViewCivExpansion.setText(TextViewCivExpansion.getText() + " " + expansion);
 
             TextViewCivArmyType = (TextView) findViewById(R.id.TextViewCivArmyType);
-            TextViewCivArmyType.setText(TextViewCivArmyType.getText()+" " + armyType);
+            TextViewCivArmyType.setText(TextViewCivArmyType.getText() + " " + armyType);
 
             TextViewCivTeamBonus = (TextView) findViewById(R.id.TextViewCivTeamBonus);
-            TextViewCivTeamBonus.setText( TextViewCivTeamBonus.getText()+" " + teamBonus);
+            TextViewCivTeamBonus.setText(TextViewCivTeamBonus.getText() + " " + teamBonus);
 
         } catch (JSONException e) {
             e.printStackTrace();
         }
     }
+
 
     public static String[] toStringArray(JSONArray array) {
         if (array == null)

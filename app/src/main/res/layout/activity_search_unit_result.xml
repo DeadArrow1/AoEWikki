@@ -11,26 +11,29 @@
 
 
     <TextView
+        android:textSize="16sp"
         android:id="@+id/TextViewArmorBonus"
         android:layout_width="180dp"
         android:layout_height="140dp"
-        android:textColor="@color/black"
+        android:textColor="@color/purple_500"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.87"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/TextViewAccuracy" />
 
     <TextView
+        android:textSize="16sp"
         android:id="@+id/TextViewBlastRadius"
         android:layout_width="180dp"
         android:layout_height="20dp"
-        android:textColor="@color/black"
+        android:textColor="@color/purple_500"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.87"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/TextViewSearchRadius" />
 
     <Button
+        android:textSize="20sp"
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -44,6 +47,7 @@
         app:layout_constraintVertical_bias="0.972" />
 
     <Button
+
         android:id="@+id/GoBackButton"
         android:layout_width="87dp"
         android:layout_height="51dp"
@@ -58,172 +62,189 @@
         app:layout_constraintVertical_bias="0.976" />
 
     <TextView
+        android:textSize="16sp"
         android:id="@+id/TextViewSearchRadius"
         android:layout_width="180dp"
         android:layout_height="20dp"
-        android:textColor="@color/black"
+        android:textColor="@color/purple_500"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.87"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/TextViewLineOfSight" />
 
     <TextView
+        android:textSize="16sp"
         android:id="@+id/TextViewAttackBonus"
         android:layout_width="180dp"
         android:layout_height="140dp"
-        android:textColor="@color/black"
+        android:textColor="@color/purple_500"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.09"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/TextViewMovementRate" />
 
     <TextView
+        android:textSize="16sp"
         android:id="@+id/TextViewAccuracy"
         android:layout_width="180dp"
         android:layout_height="20dp"
-        android:textColor="@color/black"
+        android:textColor="@color/purple_500"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.87"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/TextViewBlastRadius" />
 
     <TextView
+        android:textSize="16sp"
         android:id="@+id/TextViewArmor"
         android:layout_width="180dp"
         android:layout_height="20dp"
-        android:textColor="@color/black"
+        android:textColor="@color/purple_500"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.87"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/TextViewAttack" />
 
     <TextView
+        android:textSize="16sp"
         android:id="@+id/TextViewAttack"
         android:layout_width="180dp"
         android:layout_height="20dp"
-        android:textColor="@color/black"
+        android:textColor="@color/purple_500"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.87"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/TextViewRange" />
 
     <TextView
+        android:textSize="16sp"
         android:id="@+id/TextViewRange"
         android:layout_width="180dp"
         android:layout_height="20dp"
-        android:textColor="@color/black"
+        android:textColor="@color/purple_500"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.87"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/TextViewHitPoints" />
 
     <TextView
+        android:textSize="16sp"
         android:id="@+id/TextViewHitPoints"
         android:layout_width="180dp"
         android:layout_height="20dp"
-        android:textColor="@color/black"
+        android:textColor="@color/purple_500"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.87"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/TextViewUnitDescription" />
 
     <TextView
+        android:textSize="16sp"
         android:id="@+id/TextViewLineOfSight"
         android:layout_width="180dp"
         android:layout_height="20dp"
-        android:textColor="@color/black"
+        android:textColor="@color/purple_500"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.87"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/TextViewArmor" />
 
     <TextView
+        android:textSize="16sp"
         android:id="@+id/TextViewMovementRate"
         android:layout_width="180dp"
         android:layout_height="20dp"
-        android:textColor="@color/black"
+        android:textColor="@color/purple_500"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.092"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/TextViewAttackDelay" />
 
     <TextView
+        android:textSize="16sp"
         android:id="@+id/TextViewAttackDelay"
         android:layout_width="180dp"
         android:layout_height="20dp"
-        android:textColor="@color/black"
+        android:textColor="@color/purple_500"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.092"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/TextViewReloadTime" />
 
     <TextView
+        android:textSize="16sp"
         android:id="@+id/TextViewBuildTime"
         android:layout_width="180dp"
         android:layout_height="20dp"
-        android:textColor="@color/black"
+        android:textColor="@color/purple_500"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.092"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/TextViewUnitCost" />
 
     <TextView
+        android:textSize="16sp"
         android:id="@+id/TextViewReloadTime"
         android:layout_width="180dp"
         android:layout_height="20dp"
-        android:textColor="@color/black"
+        android:textColor="@color/purple_500"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.092"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/TextViewBuildTime" />
 
     <TextView
+        android:textSize="16sp"
         android:id="@+id/TextViewUnitAge"
         android:layout_width="180dp"
         android:layout_height="20dp"
-        android:textColor="@color/black"
+        android:textColor="@color/purple_500"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.092"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/TextViewUnitExpansion" />
 
     <TextView
+        android:textSize="16sp"
         android:id="@+id/TextViewUnitCost"
         android:layout_width="180dp"
         android:layout_height="20dp"
-        android:textColor="@color/black"
+        android:textColor="@color/purple_500"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.092"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/TextViewUnitBuilding" />
 
     <TextView
+        android:textSize="16sp"
         android:id="@+id/TextViewUnitBuilding"
         android:layout_width="180dp"
         android:layout_height="20dp"
-        android:textColor="@color/black"
+        android:textColor="@color/purple_500"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.092"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/TextViewUnitAge" />
 
     <TextView
+        android:textSize="16sp"
         android:id="@+id/TextViewUnitExpansion"
         android:layout_width="180dp"
         android:layout_height="20dp"
-        android:textColor="@color/black"
+        android:textColor="@color/purple_500"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.09"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/TextViewUnitDescription" />
 
     <TextView
+        android:textSize="16sp"
         android:id="@+id/TextViewUnitDescription"
         android:layout_width="360dp"
         android:layout_height="60dp"
         android:capitalize="none"
         android:gravity="center"
-        android:textColor="@color/black"
+        android:textColor="@color/purple_500"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.411"
@@ -232,6 +253,7 @@
         app:layout_constraintVertical_bias="0.03" />
 
     <TextView
+        android:textSize="16sp"
         android:id="@+id/TextViewUnitName"
         android:layout_width="360dp"
         android:layout_height="61dp"
@@ -242,7 +264,7 @@
         android:scaleY="3"
         android:shadowColor="@color/black"
         android:text="Name"
-        android:textColor="@color/black"
+        android:textColor="@color/purple_500"
         android:textStyle="bold|italic"
         android:typeface="normal"
         app:layout_constraintEnd_toEndOf="parent"
