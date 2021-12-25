@@ -1,5 +1,8 @@
 package com.example.projectblankversion;
 
+import static com.example.projectblankversion.MainActivity.CivFileName;
+import static com.example.projectblankversion.MainActivity.UnitFileName;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.view.View;
@@ -15,6 +18,16 @@ import android.os.Bundle;
 
 import android.widget.EditText;
 import android.widget.TextView;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStreamReader;
 
 
 public class SearchUnitActivity extends AppCompatActivity {
@@ -48,62 +61,67 @@ public class SearchUnitActivity extends AppCompatActivity {
         String input = SearchedUnitID.getText().toString();
         if (SearchedUnitID.getText().toString().equals(""))
         {
-            ErrorWindow.setText("ID must be a number from 1 to 32");
+            ErrorWindow.setText("ID must be a number from 1 to 104");
         }
         else if(tryParseInt(input)<1 || tryParseInt(input)>104)
         {
-            ErrorWindow.setText("ID must be a number from 1 to 32");
+            ErrorWindow.setText("ID must be a number from 1 to 104");
         }
         else
         {
+            int inputInt= tryParseInt(input);
+            String FullInfo = load(UnitFileName);
             ErrorWindow.setText("");
-            RequestQueue queue = Volley.newRequestQueue(this);
-            String url = "https://age-of-empires-2-api.herokuapp.com/api/v1/unit/" + SearchedUnitID.getText().toString();
 
-            StringRequest stringRequest = new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
-                @Override
-                public void onResponse(String response) {
-                    queue.stop();
-                    openSearchResultActivity(response);
+
+            try {
+                JSONObject InformationJSON = new JSONObject(FullInfo);
+                JSONArray BasicInformationJSONArray = InformationJSON.getJSONArray("units");
+                String[] BasicInformationArray = toStringArray(BasicInformationJSONArray);
+                for(int i=0; i<=BasicInformationArray.length;i++)
+                {
+                    JSONObject Unit =new JSONObject( BasicInformationArray[i]);
+                    if(i+1==inputInt){
+                        openSearchResultActivity(Unit.toString());
+                        break;
+                    }
                 }
-            },
-                    new Response.ErrorListener() {
-                        @Override
-                        public void onErrorResponse(VolleyError error) {
-                            String errorvar = error.toString();
-                            if (errorvar.equals("com.android.volley.ClientError")) {
-
-                            } else {
-
-                            }
-                        }
-                    });
-            queue.add(stringRequest);
-
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
         }
     }
 
     public void getResponseByName(View v) {
 
-        RequestQueue queue = Volley.newRequestQueue(this);
+        String input = SearchedUnitName.getText().toString();
+        String FullInfo = load(UnitFileName);
 
-        String url = "https://age-of-empires-2-api.herokuapp.com/api/v1/unit/" + SearchedUnitName.getText().toString().replace(" ","_");
+        ErrorWindow.setText("");
 
-        StringRequest stringRequest = new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
-            @Override
-            public void onResponse(String response) {
-                queue.stop();
-                openSearchResultActivity(response);
+        try {
+            JSONObject InformationJSON = new JSONObject(FullInfo);
+            JSONArray BasicInformationJSONArray = InformationJSON.getJSONArray("units");
+            String[] BasicInformationArray = toStringArray(BasicInformationJSONArray);
+            for(int i=0; i<BasicInformationArray.length;i++) {
+                JSONObject Civ = new JSONObject(BasicInformationArray[i]);
+                if ((input.equals(Civ.getString("name")))) {
+                    openSearchResultActivity(Civ.toString());
+                    break;
+
+                }
+                else if(i==BasicInformationArray.length-1)
+                {
+                    ErrorWindow.setText("Name not found.");
+                    return;
+                }
             }
-        },
-                new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
 
-                        ErrorWindow.setText("Name does not match with any unit");
-                    }
-                });
-        queue.add(stringRequest);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+
 
     }
     //}
@@ -114,6 +132,55 @@ public class SearchUnitActivity extends AppCompatActivity {
         } catch (NumberFormatException e) {
             return 0;
         }
+    }
+
+    public static String[] toStringArray(JSONArray array) {
+        if (array == null)
+            return null;
+        String[] arr = new String[array.length()];
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = array.optString(i);
+        }
+        return arr;
+    }
+
+    public String load(String filename){
+        FileInputStream fis = null;
+        String text="";
+        try {
+
+            fis = openFileInput(filename);
+            InputStreamReader isr = new InputStreamReader(fis);
+            BufferedReader br = new BufferedReader(isr);
+            StringBuilder sb = new StringBuilder();
+            String line="";
+            while ((line = br.readLine())!=null)
+            {
+                sb.append(line);
+            }
+            text=sb.toString();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }finally {
+            if(fis != null)
+            {
+                try {
+                    fis.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+            return text;
+        }
+    }
+
+    public void openSearchActivity(View v)
+    {
+        Intent intent = new Intent(this,SearchActivity.class);
+        startActivity(intent);
+
     }
 
 }

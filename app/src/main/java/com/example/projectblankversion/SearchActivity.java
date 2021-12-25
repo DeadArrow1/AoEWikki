@@ -49,6 +49,13 @@ public class SearchActivity extends AppCompatActivity {
         startActivity(intent);
 
     }
+
+    public void openMainActivity(View v)
+    {
+        Intent intent = new Intent(this,MainActivity.class);
+        startActivity(intent);
+
+    }
     public void openSearchForTechnologyActivity()
     {
         Intent intent = new Intent(this,SearchTechnologyActivity.class);

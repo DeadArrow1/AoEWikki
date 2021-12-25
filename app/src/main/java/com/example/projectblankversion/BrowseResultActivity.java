@@ -310,5 +310,17 @@ public class BrowseResultActivity extends AppCompatActivity {
                 e.printStackTrace();
             }
     }
+    public void openBrowseActivity(View v)
+    {
+        Intent intent = new Intent(this,BrowseActivity.class);
+        startActivity(intent);
+
+    }
+    public void openMainActivity(View v)
+    {
+        Intent intent = new Intent(this,MainActivity.class);
+        startActivity(intent);
+
+    }
 
 }

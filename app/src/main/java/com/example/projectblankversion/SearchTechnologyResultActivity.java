@@ -2,7 +2,9 @@ package com.example.projectblankversion;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 
 import static com.example.projectblankversion.MainActivity.CivFileName;
@@ -132,7 +134,7 @@ public class SearchTechnologyResultActivity extends AppCompatActivity {
                 AppliesTo = AppliesTo.substring(0, 1).toUpperCase() + AppliesTo.substring(1);
 
                 TextViewTechApply = (TextView) findViewById(R.id.TextViewTechApply);
-                TextViewTechApply.setText(AppliesTo);
+                TextViewTechApply.setText("Applies to:"+AppliesTo);
             }
 
 
@@ -150,5 +152,17 @@ public class SearchTechnologyResultActivity extends AppCompatActivity {
             arr[i] = array.optString(i);
         }
         return arr;
+    }
+    public void openMainActivity(View v)
+    {
+        Intent intent = new Intent(this,MainActivity.class);
+        startActivity(intent);
+
+    }
+    public void openSearchTechActivity(View v)
+    {
+        Intent intent = new Intent(this,SearchTechnologyActivity.class);
+        startActivity(intent);
+
     }
 }

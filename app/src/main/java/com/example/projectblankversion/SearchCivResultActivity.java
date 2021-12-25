@@ -2,7 +2,9 @@ package com.example.projectblankversion;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 
 import com.android.volley.Request;
@@ -196,5 +198,18 @@ public class SearchCivResultActivity extends AppCompatActivity {
             arr[i] = array.optString(i);
         }
         return arr;
+    }
+
+    public void openMainActivity(View v)
+    {
+        Intent intent = new Intent(this,MainActivity.class);
+        startActivity(intent);
+
+    }
+    public void openSearchCivActivity(View v)
+    {
+        Intent intent = new Intent(this,SearchCivilizationActivity.class);
+        startActivity(intent);
+
     }
 }
