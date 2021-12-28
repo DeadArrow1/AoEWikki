@@ -8,13 +8,14 @@
     tools:context=".SearchCivResultActivity">
 
     <TextView
-        android:textSize="16sp"
         android:id="@+id/TextViewCivTeamBonus"
         android:layout_width="360dp"
         android:layout_height="75dp"
         android:layout_marginStart="24dp"
         android:text="Team bonus:"
         android:textColor="@color/purple_500"
+        android:textSize="16sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/TextViewCivUniqueTech"
@@ -49,59 +50,62 @@
         app:layout_constraintVertical_bias="0.972" />
 
     <TextView
-        android:textSize="16sp"
         android:id="@+id/TextViewCivCivilizationBonus"
         android:layout_width="360dp"
         android:layout_height="350dp"
         android:layout_marginStart="24dp"
         android:text="Civilization bonus:"
         android:textColor="@color/purple_500"
+        android:textSize="16sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/TextViewCivTeamBonus"
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
-        android:textSize="16sp"
         android:id="@+id/TextViewCivUniqueTech"
         android:layout_width="360dp"
         android:layout_height="23dp"
         android:layout_marginStart="24dp"
         android:text="Unique tech:"
         android:textColor="@color/purple_500"
+        android:textSize="16sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/TextViewCivUniqueUnit"
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
-        android:textSize="16sp"
         android:id="@+id/TextViewCivUniqueUnit"
         android:layout_width="360dp"
         android:layout_height="21dp"
         android:layout_marginStart="24dp"
         android:text="Special units:"
         android:textColor="@color/purple_500"
+        android:textSize="16sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/TextViewCivArmyType"
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
-        android:textSize="16sp"
         android:id="@+id/TextViewCivArmyType"
         android:layout_width="360dp"
         android:layout_height="19dp"
         android:layout_marginStart="24dp"
         android:text="Army type:"
         android:textColor="@color/purple_500"
+        android:textSize="16sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/TextViewCivExpansion"
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
-        android:textSize="16sp"
         android:id="@+id/TextViewCivExpansion"
         android:layout_width="360dp"
         android:layout_height="19dp"
@@ -109,6 +113,8 @@
         android:capitalize="none"
         android:text="Expansion:"
         android:textColor="@color/purple_500"
+        android:textSize="16sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/TextViewCivName"

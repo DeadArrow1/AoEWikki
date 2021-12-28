@@ -1,7 +1,9 @@
 package com.example.projectblankversion;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
+import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -143,6 +145,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void AutomaticDownloadData(){
+
         RequestQueue CivsQueue = Volley.newRequestQueue(this);
         String url = "https://age-of-empires-2-api.herokuapp.com/api/v1/civilizations";
 
