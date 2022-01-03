@@ -38,6 +38,7 @@
         tools:ignore="SpeakableTextPresentCheck" />
 
     <EditText
+        android:textStyle="bold"
         android:textSize="20sp"
         android:id="@+id/UnitID"
         android:layout_width="130dp"
@@ -85,6 +86,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
+        android:textStyle="bold"
         android:textSize="20sp"
         android:id="@+id/UnitName"
         android:layout_width="wrap_content"

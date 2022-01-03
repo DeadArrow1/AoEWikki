@@ -45,6 +45,7 @@
         android:ems="10"
         android:gravity="center_horizontal"
         android:hint="write id here"
+        android:textStyle="bold"
         android:inputType="number"
         android:textColor="@color/design_default_color_primary_dark"
         android:textColorHint="@color/design_default_color_primary_dark"
@@ -86,6 +87,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
+        android:textStyle="bold"
         android:textSize="20sp"
         android:id="@+id/CivName"
         android:layout_width="wrap_content"

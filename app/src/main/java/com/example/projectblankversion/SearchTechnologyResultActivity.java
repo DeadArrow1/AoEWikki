@@ -96,18 +96,18 @@ public class SearchTechnologyResultActivity extends AppCompatActivity {
 
             if(value.contains("cost")) {
                 JSONObject costJSON = TechInformationJSON.getJSONObject("cost");
-                cost = cost.concat("Cost: ");
+                cost = cost.concat("Cost: \n");
                 if (value.contains("Food")) {
                     food = costJSON.getInt("Food");
-                    cost = cost.concat("Food: " + food + " ");
+                    cost = cost.concat("    Food: " + food + "\n");
                 }
                 if (value.contains("Wood")) {
                     wood = costJSON.getInt("Wood");
-                    cost = cost.concat("Wood: " + wood + " ");
+                    cost = cost.concat("    Wood: " + wood + "\n");
                 }
                 if (value.contains("Gold")) {
                     gold = costJSON.getInt("Gold");
-                    cost = cost.concat("Gold: " + gold + " ");
+                    cost = cost.concat("    Gold:   " + gold + " ");
                 }
                 TextViewTechCost = (TextView) findViewById(R.id.TextViewTechCost);
                 TextViewTechCost.setText(cost);

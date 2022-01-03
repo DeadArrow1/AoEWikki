@@ -49,45 +49,42 @@ public class SearchCivilizationActivity extends AppCompatActivity {
         ErrorWindow = (TextView) findViewById(R.id.ErrorWindow);
     }
 
-
-
+    JSONObject InformationJSON;
 
     public void getResponseByID(View v) {
-        String input = SearchedCivID.getText().toString();
-
-        if (SearchedCivID.getText().toString().equals(""))
-        {
-            ErrorWindow.setText("ID must be a number from 1 to 32");
-        }
-        else if(tryParseInt(input)<1 || tryParseInt(input)>32)
-        {
-            ErrorWindow.setText("ID must be a number from 1 to 32");
-        }
-        else
-        {
-            int inputInt= tryParseInt(input);
+        try {
             String FullInfo = load(CivFileName);
-            ErrorWindow.setText("");
+            InformationJSON = new JSONObject(FullInfo);
+            JSONArray BasicInformationJSONArray = InformationJSON.getJSONArray("civilizations");
+            String[] BasicInformationArray = toStringArray(BasicInformationJSONArray);
 
 
-            try {
-                JSONObject InformationJSON = new JSONObject(FullInfo);
-                JSONArray BasicInformationJSONArray = InformationJSON.getJSONArray("civilizations");
-                String[] BasicInformationArray = toStringArray(BasicInformationJSONArray);
-                for(int i=0; i<=BasicInformationArray.length;i++)
-                {
+            String input = SearchedCivID.getText().toString();
 
-                    if(i+1==inputInt){
-                        JSONObject Civ =new JSONObject( BasicInformationArray[i]);
+            if (SearchedCivID.getText().toString().equals("")) {
+                ErrorWindow.setText("ID must be a number from 1 to "+BasicInformationArray.length);
+            } else if (tryParseInt(input) < 1 || tryParseInt(input) >BasicInformationArray.length) {
+                ErrorWindow.setText("ID must be a number from 1 to "+BasicInformationArray.length);
+            } else {
+                int inputInt = tryParseInt(input);
+                ErrorWindow.setText("");
+
+
+                for (int i = 0; i <= BasicInformationArray.length; i++) {
+
+                    if (i + 1 == inputInt) {
+                        JSONObject Civ = new JSONObject(BasicInformationArray[i]);
                         openSearchResultActivity(Civ.toString());
                         return;
                     }
                 }
-            } catch (JSONException e) {
+
+            }}catch(JSONException e){
                 e.printStackTrace();
             }
         }
-    }
+
+
 
     public void getResponseByName(View v) {
 

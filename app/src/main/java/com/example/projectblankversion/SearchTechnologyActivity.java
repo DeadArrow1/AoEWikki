@@ -57,26 +57,28 @@ public class SearchTechnologyActivity extends AppCompatActivity {
 
 
     public void getResponseByID(View v) {
+        try {
+            String FullInfo = load(TechFileName);
+            JSONObject InformationJSON = new JSONObject(FullInfo);
+            JSONArray BasicInformationJSONArray = InformationJSON.getJSONArray("technologies");
+            String[] BasicInformationArray = toStringArray(BasicInformationJSONArray);
         String input = SearchedTechID.getText().toString();
         if (SearchedTechID.getText().toString().equals(""))
         {
-            ErrorWindow.setText("ID must be a number from 1 to 140");
+            ErrorWindow.setText("ID must be a number from 1 to "+BasicInformationArray.length);
         }
-        else if(tryParseInt(input)<1 || tryParseInt(input)>140)
+        else if(tryParseInt(input)<1 || tryParseInt(input)>BasicInformationArray.length)
         {
-            ErrorWindow.setText("ID must be a number from 1 to 140");
+            ErrorWindow.setText("ID must be a number from 1 to "+BasicInformationArray.length);
         }
         else
         {
             int inputInt= tryParseInt(input);
-            String FullInfo = load(TechFileName);
+
             ErrorWindow.setText("");
 
 
-            try {
-                JSONObject InformationJSON = new JSONObject(FullInfo);
-                JSONArray BasicInformationJSONArray = InformationJSON.getJSONArray("technologies");
-                String[] BasicInformationArray = toStringArray(BasicInformationJSONArray);
+
                 for(int i=0; i<=BasicInformationArray.length;i++)
                 {
                     JSONObject Tech =new JSONObject( BasicInformationArray[i]);
@@ -85,9 +87,9 @@ public class SearchTechnologyActivity extends AppCompatActivity {
                         break;
                     }
                 }
-            } catch (JSONException e) {
-                e.printStackTrace();
             }
+        }catch (JSONException e) {
+            e.printStackTrace();
         }
     }
 

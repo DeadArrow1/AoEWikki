@@ -5,7 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background"
-    android:onClick="openMainActivity"
     tools:context=".SearchUnitResultActivity">
 
 
@@ -24,7 +23,7 @@
     <TextView
         android:id="@+id/TextViewBlastRadius"
         android:layout_width="180dp"
-        android:layout_height="20dp"
+        android:layout_height="25dp"
         android:textColor="@color/purple_500"
         android:textSize="16sp"
         android:textStyle="bold"
@@ -34,12 +33,12 @@
         app:layout_constraintTop_toBottomOf="@+id/TextViewSearchRadius" />
 
     <Button
-        android:textSize="20sp"
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="openMainActivity"
         android:text="Got it"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -65,7 +64,7 @@
     <TextView
         android:id="@+id/TextViewSearchRadius"
         android:layout_width="180dp"
-        android:layout_height="20dp"
+        android:layout_height="25dp"
         android:textColor="@color/purple_500"
         android:textSize="16sp"
         android:textStyle="bold"
@@ -89,7 +88,7 @@
     <TextView
         android:id="@+id/TextViewAccuracy"
         android:layout_width="180dp"
-        android:layout_height="20dp"
+        android:layout_height="25dp"
         android:textColor="@color/purple_500"
         android:textSize="16sp"
         android:textStyle="bold"
@@ -101,7 +100,7 @@
     <TextView
         android:id="@+id/TextViewArmor"
         android:layout_width="180dp"
-        android:layout_height="20dp"
+        android:layout_height="60dp"
         android:textColor="@color/purple_500"
         android:textSize="16sp"
         android:textStyle="bold"
@@ -113,7 +112,7 @@
     <TextView
         android:id="@+id/TextViewAttack"
         android:layout_width="180dp"
-        android:layout_height="20dp"
+        android:layout_height="25dp"
         android:textColor="@color/purple_500"
         android:textSize="16sp"
         android:textStyle="bold"
@@ -125,7 +124,7 @@
     <TextView
         android:id="@+id/TextViewRange"
         android:layout_width="180dp"
-        android:layout_height="20dp"
+        android:layout_height="25dp"
         android:textColor="@color/purple_500"
         android:textSize="16sp"
         android:textStyle="bold"
@@ -137,7 +136,7 @@
     <TextView
         android:id="@+id/TextViewHitPoints"
         android:layout_width="180dp"
-        android:layout_height="20dp"
+        android:layout_height="25dp"
         android:textColor="@color/purple_500"
         android:textSize="16sp"
         android:textStyle="bold"
@@ -149,7 +148,7 @@
     <TextView
         android:id="@+id/TextViewLineOfSight"
         android:layout_width="180dp"
-        android:layout_height="20dp"
+        android:layout_height="25dp"
         android:textColor="@color/purple_500"
         android:textSize="16sp"
         android:textStyle="bold"
@@ -161,7 +160,7 @@
     <TextView
         android:id="@+id/TextViewMovementRate"
         android:layout_width="180dp"
-        android:layout_height="20dp"
+        android:layout_height="25dp"
         android:textColor="@color/purple_500"
         android:textSize="16sp"
         android:textStyle="bold"
@@ -173,7 +172,7 @@
     <TextView
         android:id="@+id/TextViewAttackDelay"
         android:layout_width="180dp"
-        android:layout_height="20dp"
+        android:layout_height="25dp"
         android:textColor="@color/purple_500"
         android:textSize="16sp"
         android:textStyle="bold"
@@ -185,7 +184,7 @@
     <TextView
         android:id="@+id/TextViewBuildTime"
         android:layout_width="180dp"
-        android:layout_height="20dp"
+        android:layout_height="25dp"
         android:textColor="@color/purple_500"
         android:textSize="16sp"
         android:textStyle="bold"
@@ -197,7 +196,7 @@
     <TextView
         android:id="@+id/TextViewReloadTime"
         android:layout_width="180dp"
-        android:layout_height="20dp"
+        android:layout_height="25dp"
         android:textColor="@color/purple_500"
         android:textSize="16sp"
         android:textStyle="bold"
@@ -209,7 +208,7 @@
     <TextView
         android:id="@+id/TextViewUnitAge"
         android:layout_width="180dp"
-        android:layout_height="20dp"
+        android:layout_height="25dp"
         android:textColor="@color/purple_500"
         android:textSize="16sp"
         android:textStyle="bold"
@@ -221,7 +220,7 @@
     <TextView
         android:id="@+id/TextViewUnitCost"
         android:layout_width="180dp"
-        android:layout_height="20dp"
+        android:layout_height="60dp"
         android:textColor="@color/purple_500"
         android:textSize="16sp"
         android:textStyle="bold"
@@ -233,7 +232,7 @@
     <TextView
         android:id="@+id/TextViewUnitBuilding"
         android:layout_width="180dp"
-        android:layout_height="20dp"
+        android:layout_height="25dp"
         android:textColor="@color/purple_500"
         android:textSize="16sp"
         android:textStyle="bold"
@@ -245,14 +244,14 @@
     <TextView
         android:id="@+id/TextViewUnitExpansion"
         android:layout_width="180dp"
-        android:layout_height="20dp"
+        android:layout_height="25dp"
         android:textColor="@color/purple_500"
         android:textSize="16sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.09"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/TextViewUnitDescription"
-        android:textStyle="bold" />
+        app:layout_constraintTop_toBottomOf="@+id/TextViewUnitDescription" />
 
     <TextView
         android:id="@+id/TextViewUnitDescription"
@@ -271,7 +270,6 @@
         app:layout_constraintVertical_bias="0.03" />
 
     <TextView
-        android:textSize="16sp"
         android:id="@+id/TextViewUnitName"
         android:layout_width="360dp"
         android:layout_height="61dp"
@@ -283,6 +281,7 @@
         android:shadowColor="@color/black"
         android:text="Name"
         android:textColor="@color/purple_500"
+        android:textSize="10sp"
         android:textStyle="bold|italic"
         android:typeface="normal"
         app:layout_constraintEnd_toEndOf="parent"
