@@ -40,10 +40,10 @@ public class SearchTechnologyActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_search_unit);
+        setContentView(R.layout.activity_search_technology);
 
-        SearchedTechID = (EditText) findViewById(R.id.UnitID);
-        SearchedTechName =(EditText) findViewById(R.id.UnitName);
+        SearchedTechID = (EditText) findViewById(R.id.TechID);
+        SearchedTechName =(EditText) findViewById(R.id.TechName);
         ErrorWindow = (TextView) findViewById(R.id.ErrorWindow);
     }
 

@@ -49,38 +49,38 @@
         app:layout_constraintVertical_bias="0.596" />
 
     <Button
-        android:textSize="18sp"
         android:id="@+id/PreviousPage"
         android:layout_width="150dp"
-        android:layout_height="70dp"
+        android:layout_height="60dp"
         android:layout_marginStart="32dp"
+        android:layout_marginTop="24dp"
         android:onClick="PreviousPage"
         android:text="Previous page"
+        android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/BrowseNamesTextView"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.516" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:textSize="18sp"
         android:id="@+id/NextPage"
         android:layout_width="150dp"
-        android:layout_height="70dp"
-        android:layout_marginEnd="16dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="32dp"
         android:onClick="NextPage"
         android:text="Next page"
+        android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/BrowseIDsTextView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.516" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:textSize="20sp"
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="openMainActivity"
         android:text="Got it"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
